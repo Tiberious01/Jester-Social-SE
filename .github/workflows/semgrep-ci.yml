@@ -30,7 +30,7 @@ jobs:
           echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
           semgrep scan --verbose --json ${{ steps.changed-files.outputs.all_changed_files }} -o semgrep-output.json
       - name: Upload semgrep output
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: my-semgrep-artifact
           path: semgrep-output.json
